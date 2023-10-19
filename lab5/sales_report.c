@@ -12,7 +12,7 @@ int main(){
     double data[11];
     char *months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     printf("Enter the name of the sales report file: ");
-    scanf("%s", &file);
+    scanf("%s", file);
 
     FILE *in = fopen(file, "r");
     if (in == NULL){

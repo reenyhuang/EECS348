@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <h1>EECS 348: LAB SEVEN - PRACTICE FOUR</h1>
+    <form method="post">
+        Enter a number: <input type="text" name="number">
+        <input type="submit" value="Generate Table">
+    </form>
+    <?php
+    if (isset($_POST['number'])) {
+        $number = intval($_POST['number']);
+        if ($number > 0) {
+            echo '<table border="1">';
+            echo '<tr><th></th>';
+
+            for ($col = 1; $col <= $number; $col++) {
+                echo '<th>' . $col . '</th>';
+            }
+
+            echo '</tr>';
+            for ($row = 1; $row <= $number; $row++) {
+                echo '<tr>';
+                echo '<th>' . $row . '</th>';
+                for ($col = 1; $col <= $number; $col++) {
+                    echo '<td>' . ($row * $col) . '</td>';
+                }
+                echo '</tr>';
+            }
+            echo '</table>';
+        } else {
+            echo "Please enter a positive number.";
+        }
+    }
+    ?>
+</body>
+</html>
+
